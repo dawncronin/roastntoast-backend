@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :comments
   resources :likes
   resources :dislikes
+  post '/login', to: 'auth#create'
 end

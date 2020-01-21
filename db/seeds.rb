@@ -11,10 +11,10 @@
 # Like.destroy_all
 # Dislike.destroy_all
 
-user1 = User.create(username: 'Dawnster')
-user2 = User.create(username: 'Geeuho')
-user3 = User.create(username: 'Roaster')
-user4 = User.create(username: 'Toaster')
+user1 = User.create(username: 'Dawnster', password: 'test123', password_confirmation: 'test123')
+user2 = User.create(username: 'Geeuho', password: 'test123', password_confirmation: 'test123')
+user3 = User.create(username: 'Roaster', password: 'test123', password_confirmation: 'test123')
+user4 = User.create(username: 'Toaster', password: 'test123', password_confirmation: 'test123')
 
 picture1 = Picture.create(img_url:'www.sampleurl1.com', roast_bio: 'Roasting bio sample 1', toast_bio: 'Toasting bio sample 1', user_id: 1)
 picture2 = Picture.create(img_url:'www.sampleurl2.com', roast_bio: 'Roasting bio sample 2', toast_bio: 'Toasting bio sample 2', user_id: 2)
