@@ -1,12 +1,12 @@
 class Api::V1::UsersController < ApplicationController 
     skip_before_action :authorized, only: [:create]
-    def index
-        users = User.all
-        # options = {
-        #     include: [:pictures]
-        # }
-        render json: UserSerializer.new(users)
-    end
+    # def index
+    #     users = User.all
+    #     # options = {
+    #     #     include: [:pictures]
+    #     # }
+    #     render json: UserSerializer.new(users)
+    # end
 
     def create
         user = User.create(user_params)
@@ -16,14 +16,15 @@ class Api::V1::UsersController < ApplicationController
         else
             render json: { error: 'failed to create user' }, status: :not_acceptable
         end
-      end
-    def show
-        users = User.find_by(id: params[:id])
-        # options = {
-        #     include: [:pictures]
-        # }
-        render json: UserSerializer.new(users)
     end
+
+    # def show
+    #     users = User.find_by(id: params[:id])
+    #     # options = {
+    #     #     include: [:pictures]
+    #     # }
+    #     render json: UserSerializer.new(users)
+    # end
 
     private
        
