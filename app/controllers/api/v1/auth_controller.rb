@@ -12,8 +12,6 @@ class Api::V1::AuthController < ApplicationController
   end
 
   def show
-    # token = decoded_token
-    token = auth_header.split('.')[1]
     if logged_in?
       render json: { id: current_user.id, username: current_user.username }
     else
