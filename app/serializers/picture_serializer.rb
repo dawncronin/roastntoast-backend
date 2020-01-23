@@ -1,5 +1,6 @@
 class PictureSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :img_url, :roast_bio, :toast_bio, :user_id, :user, :comments, :picture_likes, :picture_dislikes, :created_at
+  has_many :comments
+  attributes :img_url, :roast_bio, :toast_bio, :user, :user_id, :picture_likes, :picture_dislikes
 end
  

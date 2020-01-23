@@ -6,7 +6,9 @@ class Api::V1::PicturesController < ApplicationController
 
     def show
         picture = Picture.find(params[:id])
-        render json: PictureSerializer.new(picture)
+        options = {}
+        options[:include] = [:comments, :'comments.user_id']
+        render json: PictureSerializer.new(picture, options).serialized_json
     end
 
     def create
