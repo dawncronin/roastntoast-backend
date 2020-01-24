@@ -23,6 +23,15 @@ class Api::V1::UsersController < ApplicationController
         render json: UserSerializer.new(user)
     end
 
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+        user.pictures.destroy
+        user.comments.destroy
+        user.picture
+        render json: { destroy: params[:id] }
+    end
+
     private
        
     def user_params
