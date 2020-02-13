@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :comments
       post '/login', to: 'auth#create'
       get '/current_user', to: 'auth#show'
+      get "/", to: "auth#home"
     end
   end
 end
